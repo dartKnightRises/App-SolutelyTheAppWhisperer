@@ -1,6 +1,6 @@
 # app_solutely
 
-Welcome to [Your YouTube Channel Name]! We're dedicated to providing high-quality tutorials and guides for building mobile app solutions using Flutter. Whether you're a beginner looking to get started with Flutter or an experienced developer seeking advanced techniques, our channel has something for everyone.
+The "Brightness Switch" Flutter project demonstrates how to create a simple mobile application that allows users to toggle between light and dark mode.
 
 ## Getting Started
 
