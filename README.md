@@ -1,20 +1,37 @@
-# app_solutely
+# ToggleBrightness
 
-The "Brightness Switch" Flutter project demonstrates how to create a simple mobile application that allows users to toggle between light and dark mode.
+The "Brightness Switch" Flutter project demonstrates how to create a simple mobile application that allows users to toggle between light and dark mode and store last session using SharedPreference.
+
+## Overview
+
+This Flutter project showcases the implementation of a dynamic theme switching feature.
+## Key Features
+
+- **Dynamic Theme Switching:** Users can switch between light and dark modes by tapping on a switch widget displayed on the app's main screen.
+
 
 ## Getting Started
 
-Getting Started
+Follow these steps to get started with the "Brightness Switch" Flutter project:
 
-Clone the Repository:
-git clone https://github.com/dartKnightRises/App-SolutelyTheAppWhisperer.git
-cd App-SolutelyTheAppWhisperer
-git checkout ToggleBrightness
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/dartKnightRises/App-SolutelyTheAppWhisperer.git
 
+2. **Navigate to Project Directory:**
+   ```bash
+   cd App-SolutelyTheAppWhisperer
 
-Install Dependencies:
-flutter pub get 
+3. **Checkout the ToggleBrightness_SharedPref Branch:**
+   ```bash
+   git checkout ToggleBrightness_SharedPref
 
+4. **Install Dependencies::**
+   ```bash
+   flutter pub get
 
-Run the App:
-flutter run
+5. **Run the App:**
+   ```bash
+   flutter run
+
+   
