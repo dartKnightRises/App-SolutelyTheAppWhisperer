@@ -13,7 +13,7 @@ git checkout ToggleBrightness
 
 
 Install Dependencies:
-flutter pub get
+flutter pub get 
 
 
 Run the App:
