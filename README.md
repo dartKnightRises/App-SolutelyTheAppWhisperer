@@ -1,4 +1,4 @@
-# App-SolutelyTheAppWhisperer
+# App-Solutely The App Whisperer
 
 Welcome to App-Solutely: The App Whisperer! We're dedicated to providing high-quality tutorials and guides for building mobile app solutions using Flutter. Whether you're a beginner looking to get started with Flutter or an experienced developer seeking advanced techniques, our channel has something for everyone.
 
