@@ -22,19 +22,15 @@ Follow these steps to get started with the "Brightness Switch" Flutter project:
    ```bash
    cd App-SolutelyTheAppWhisperer
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/dartKnightRises/App-SolutelyTheAppWhisperer.git
-
-1. **Checkout the ToggleBrightness Branch:**
+3. **Checkout the ToggleBrightness Branch:**
    ```bash
    git checkout ToggleBrightness
 
-1. **Install Dependencies::**
+4. **Install Dependencies::**
    ```bash
    flutter pub get
 
-1. **Run the App:**
+5. **Run the App:**
    ```bash
    flutter run
 
