@@ -4,13 +4,17 @@ The "Brightness Switch" Flutter project demonstrates how to create a simple mobi
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Getting Started
 
-A few resources to get you started if this is your first Flutter project:
+Clone the Repository:
+git clone https://github.com/dartKnightRises/App-SolutelyTheAppWhisperer.git
+cd App-SolutelyTheAppWhisperer
+git checkout ToggleBrightness
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Install Dependencies:
+flutter pub get
+
+
+Run the App:
+flutter run
