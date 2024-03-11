@@ -4,12 +4,11 @@ The "Brightness Switch" Flutter project demonstrates how to create a simple mobi
 
 ## Overview
 
-This Flutter project showcases the implementation of a dynamic theme switching feature, allowing users to choose between light and dark modes based on their preferences. The app utilizes the `shared_preferences` package to store the user's brightness preference locally, ensuring that the selected mode persists even after the app is closed and reopened.
-
+This Flutter project showcases the implementation of a dynamic theme switching feature.
 ## Key Features
 
 - **Dynamic Theme Switching:** Users can switch between light and dark modes by tapping on a switch widget displayed on the app's main screen.
-- **Persistent Storage:** The user's brightness preference is stored locally using the `shared_preferences` package, ensuring that the selected mode remains unchanged across app restarts.
+
 
 ## Getting Started
 
