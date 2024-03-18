@@ -1,110 +1,52 @@
+import 'package:app_solutely/view/home_screen/home_screen.dart'; // Importing the HomeScreen widget
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart'; // Importing the Get package for state management
 
+import 'controller/app_controller.dart'; // Importing the AppController
 
-// This constant string is used as a key to store the theme preference in SharedPreferences
-const String brightnessKey = "isLightTheme";
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
+  // Lazy initialization of AppController
+  Get.lazyPut(() => AppController());
 
-void main() {
-  // Starts the app by running the MyApp widget
-  runApp(const MyApp());
+  await AppController().bootstrap(); // Bootstrapping the AppController
+
+  runApp(const MyApp()); // Running the application
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-
-  // Boolean variable to store the current theme preference (light or dark)
-  bool isLightTheme = true;
-
-  // Brightness variable to hold the current brightness value based on the theme
-  Brightness brightness = Brightness.light;
-
-  // IconData variable to store the icon data for the theme selection button (sun or moon)
-  IconData iconData = Icons.wb_sunny;
-
-  // This function retrieves the saved theme preference from SharedPreferences on app launch
-  Future<void> _getPrefs() async {
-    final prefs = await SharedPreferences.getInstance();
-    isLightTheme = prefs.getBool(brightnessKey) ?? true;
-    _setBrightness(); // Call _setBrightness() to update brightness based on retrieved preference
-  }
-
-  // This function updates the brightness and icon data based on the current theme preference
-  void _setBrightness() {
-    setState(() {
-      brightness = isLightTheme ? Brightness.light : Brightness.dark;
-      iconData = isLightTheme ? Icons.wb_sunny : Icons.nightlight_round;
-    });
-  }
-
-  // This function toggles the theme preference (light/dark) and updates the UI accordingly
-  void _toggleTheme() {
-    setState(() {
-      isLightTheme = !isLightTheme;
-      _setBrightness(); // Update brightness and icon data after toggling theme
-    });
-    SharedPreferences.getInstance().then((prefs) => prefs.setBool(brightnessKey, isLightTheme));
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _getPrefs(); // Call _getPrefs() to retrieve theme preference on app launch
-  }
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      // Sets the theme of the app based on the current brightness value
-      theme: ThemeData(
-        brightness: brightness,
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Brightness App'),
+    return Obx(() {
+      final appController = Get.find<AppController>(); // Accessing the AppController using Get.find
+
+      // Determining the current theme based on the selected mode (light/dark)
+      final currentTheme = appController.isDarkModeCustom.value
+          ? appController
+          .listOfCustomThemes[appController.currentDarkThemeIndex.value]
+          : appController
+          .listOfCustomThemes[appController.currentLightThemeIndex.value];
+
+      // Setting the status bar color based on the primary color of the current theme
+      return AnnotatedRegion(
+        value: SystemUiOverlayStyle(
+          statusBarColor: currentTheme.colorScheme.primary,
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                'Select Brightness:',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 20),
-              IconButton(
-                // Displays the sun icon for light theme and moon icon for dark theme
-                icon: Icon(iconData),
-                iconSize: 50,
-                onPressed: _toggleTheme, // Calls _toggleTheme() on button press
-                color: isLightTheme ? Colors.yellow[700] : Colors.grey[700], // Set button color based on theme
-              ),
-              const SizedBox(height: 10),
-              Text(
-                isLightTheme ? 'Light Mode' : 'Dark Mode',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: isLightTheme ? Colors.black : Colors.white, // Text color changes based on theme
-                ),
-              ),
-            ],
-          ),
+        // Using GetMaterialApp for navigation and theme management
+        child: GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: currentTheme, // Setting the light theme
+          darkTheme: currentTheme, // Setting the dark theme
+          themeMode: appController.isDarkModeCustom.value
+              ? ThemeMode.dark // Setting the theme mode based on custom dark mode toggle
+              : ThemeMode.light,
+          home: const HomeScreen(), // Setting the home screen
         ),
-      ),
-    );
+      );
+    });
   }
 }
-
