@@ -1,18 +1,18 @@
-# ToggleBrightness
+# MaterialTheme
 
-The "Brightness Switch" Flutter project demonstrates how to create a simple mobile application that allows users to toggle between light and dark mode and store last session using SharedPreference.
+The "Material Theme" Flutter project demonstrates how to create a simple mobile application that changes the entire theme of the application.
 
 ## Overview
 
 This Flutter project showcases the implementation of a dynamic theme switching feature.
 ## Key Features
 
-- **Dynamic Theme Switching:** Users can switch between light and dark modes by tapping on a switch widget displayed on the app's main screen.
+- **Dynamic Theme Switching:** Users can switch between various theme by tapping on the theme tile displayed on the app's main screen.
 
 
 ## Getting Started
 
-Follow these steps to get started with the "Brightness Switch" Flutter project:
+Follow these steps to get started with the "Material Theme" Flutter project:
 
 1. **Clone the Repository:**
    ```bash
@@ -22,9 +22,9 @@ Follow these steps to get started with the "Brightness Switch" Flutter project:
    ```bash
    cd App-SolutelyTheAppWhisperer
 
-3. **Checkout the ToggleBrightness_SharedPref Branch:**
+3. **Checkout the MaterialTheme Branch:**
    ```bash
-   git checkout ToggleBrightness_SharedPref
+   git checkout MaterialTheme
 
 4. **Install Dependencies::**
    ```bash
