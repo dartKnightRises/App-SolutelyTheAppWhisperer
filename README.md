@@ -1,4 +1,4 @@
-# ToggleBrightness
+# ToggleBrightness_SharedPref
 
 The "Brightness Switch" Flutter project demonstrates how to create a simple mobile application that allows users to toggle between light and dark mode and store last session using SharedPreference.
 
