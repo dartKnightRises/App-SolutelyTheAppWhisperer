@@ -1,5 +1,5 @@
 name: app_solutely
-description: "Welcome to [Your YouTube Channel Name]! We're dedicated to providing high-quality tutorials and guides for building mobile app solutions using Flutter. Whether you're a beginner looking to get started with Flutter or an experienced developer seeking advanced techniques, our channel has something for everyone."
+description: "Welcome to app_solutely! We're dedicated to providing high-quality tutorials and guides for building mobile app solutions using Flutter. Whether you're a beginner looking to get started with Flutter or an experienced developer seeking advanced techniques, our channel has something for everyone."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
